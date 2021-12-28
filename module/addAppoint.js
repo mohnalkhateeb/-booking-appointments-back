@@ -1,9 +1,10 @@
 'use strict'
 const userModel = require('./user')
-module.exports = addappoint
+module.exports = addAppoint
 
-function addappoint(req, res) {
-    let { email, name, buyername , buyeremail, date , approval } = req.body
+function addAppoint(req, res) {
+    let { email, buyername , buyeremail, date, time, aproval } = req.body
+    console.log(req.body);
     userModel.find({ email: email }, function (error, appointData) {
         if (error) { res.send(error, 'error') }
         else {
@@ -11,7 +12,8 @@ function addappoint(req, res) {
                 buyername: buyername,
                 buyeremail: buyeremail,
                 date: date,
-                approval : approval
+                time :time,
+                aproval : aproval
             })
 
             appointData[0].save()
