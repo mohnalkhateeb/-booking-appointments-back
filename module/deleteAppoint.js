@@ -5,7 +5,6 @@ module.exports = deleteAppoint
 function deleteAppoint(req, res) {
     console.log(req.params)
     console.log(req.query)
-    console.log(req.params.bookId)
     let email = req.query.email
     let index = Number(req.params.Id)
     userModel.find({ email: email }, function (error, appointData) {
