@@ -1,17 +1,17 @@
 'use strict'
 const mongoose = require("mongoose");
-const appointSchema = new mongoose.Schema({
-    buyername: String,
-    buyeremail: String,
-    date: String,
-    time : String,
-    aproval : Boolean
+const AppointSchema = new mongoose.Schema({
+    buyername:String,
+            buyeremail: String,
+            date: String,
+            time : String,
+            aproval : false
 });
 
 const userSchema = new mongoose.Schema({
     email: String,
-    name :String,
-    appointments : [appointSchema]
+    name : String,
+    appointments : [AppointSchema]
 })
 
 // This creates our model from the above schema, using mongoose's model method

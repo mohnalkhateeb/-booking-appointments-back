@@ -1,13 +1,13 @@
 'use strict'
 const userModel = require('./user')
-module.exports = allseller
+module.exports = getAllSellers
 
-function allseller(req, res) {
-    userModel.find({}, function (error, appointData) {
+function getAllSellers(req, res) {
+    userModel.find({}, function (error, AppointData) {
         if (error) { res.send(error, 'error') }
         else {
             
-            res.send(appointData)
+            res.send(AppointData)
         }
     })
 }
