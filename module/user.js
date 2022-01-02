@@ -1,7 +1,7 @@
 'use strict'
 const mongoose = require("mongoose");
 const AppointSchema = new mongoose.Schema({
-    buyername:String,
+            buyername:String,
             buyeremail: String,
             date: String,
             time : String,
@@ -11,6 +11,7 @@ const AppointSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
     email: String,
     name : String,
+    role : String,
     appointments : [AppointSchema]
 })
 

@@ -1,14 +1,14 @@
 
 'use strict'
 const userModel = require('./user')
-module.exports = getAllSellers
+module.exports = getAllAppoints
 
-function getAllSellers(req, res) {
+function getAllAppoints(req, res) {
     let email = req.query.email
     userModel.find({ email: email }, function (error, AppointData) {
     if (error) { res.send(error, 'error') }
     else {
-        res.send(AppointData[0].appointments)
+        res.send(AppointData[0])
     }
 })
    

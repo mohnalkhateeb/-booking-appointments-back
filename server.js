@@ -26,7 +26,7 @@ server.delete('/deleteappoint/:Id', deleteAppoint)
 server.put('/updateAppoint/:Id', updateAppoint)
 function seedUserCollection() {
     const Mohammad = new userModel({
-        email: 'mhmmd.alkateeb@gmail.com', name : 'Mohammad', appointments: [{
+        email: 'mhmmd.alkateeb@gmail.com', name : 'Mohammad', role : 'seller', appointments: [{
             buyername: 'Noor',
             buyeremail: 'talents@iwishsystems.com',
             date: '31/12/2021',
@@ -36,7 +36,7 @@ function seedUserCollection() {
     });
 
     const Noor = new userModel({
-        email: 'talents@iwishsystems.com', name : 'Noor', appointments: [{
+        email: 'talents@iwishsystems.com', name : 'Noor', role : 'seller', appointments: [{
             buyername: 'Mohammad',
             buyeremail: 'mhmmd.alkateeb@gmail.com',
             date: '31/12/2021',
@@ -44,9 +44,18 @@ function seedUserCollection() {
             aproval : false
         }]
     });
-
+    const MohammadNoor = new userModel({
+        email: 'mohnoorkh87@gmail.com', name : 'MohammadNoor', role : 'buyer', appointments: [{
+            buyername: 'Mohammad',
+            buyeremail: 'mhmmd.alkateeb@gmail.com',
+            date: '31/12/2021',
+            time : '1:00 PM',
+            aproval : false
+        }]
+    });
     Mohammad.save()
     Noor.save()
+    MohammadNoor.save()
 }
 
 // seedUserCollection();
